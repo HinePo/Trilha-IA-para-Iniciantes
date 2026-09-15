@@ -34,7 +34,7 @@ Esta não é uma lista de cursos obrigatórios. A melhor sequência é **experim
 | Cada encontro | 45 a 75 minutos |
 | Divisão do tempo | Cerca de 15 minutos de conteúdo e o restante de prática |
 | Regra principal | Sempre terminar com algo criado, modificado ou testado |
-| <span style="color: orange"><strong>Quando travar</strong></span> | <span style="color: orange"><strong>Pedir uma explicação simples à IA e continuar em passos menores</strong></span> |
+| 💡 **Quando travar** | 💡 **Pedir uma explicação simples à IA e continuar em passos menores** |
 
 ## Mapa rápido da trilha
 
@@ -161,7 +161,7 @@ O [Grok Bot](https://x.ai/bot) permite criar Bots persistentes, dar um papel par
 
 > Para quem nunca trabalhou com Agents, o Grok Bot pode ser o **melhor ponto de partida** da trilha. Ele é simples de configurar, roda no navegador sem instalar nada, e mostra de forma visual cada Bot, seu papel e a troca de mensagens entre eles. Isso ajuda a construir o modelo mental de coordinator e workers antes de lidar com Agents de código, que são mais poderosos, mas também mais abstratos.
 
-<span style="color: orange"><strong>A ideia central é criar um time de Agents, como na vida real: cada Bot tem uma função, instruções e habilidades diferentes, do mesmo jeito que um grupo de trabalho na escola, faculdade ou empresa costuma dividir tarefas entre pessoas diferentes.</strong></span> Você pode conversar com cada Bot individualmente ou colocar todos em um **group chat**, como um grupo de WhatsApp de trabalho, onde eles colaboram entre si e com você para chegar ao resultado.
+💡 **A ideia central é criar um time de Agents, como na vida real: cada Bot tem uma função, instruções e habilidades diferentes, do mesmo jeito que um grupo de trabalho na escola, faculdade ou empresa costuma dividir tarefas entre pessoas diferentes.** Você pode conversar com cada Bot individualmente ou colocar todos em um **group chat**, como um grupo de WhatsApp de trabalho, onde eles colaboram entre si e com você para chegar ao resultado.
 
 Links úteis:
 
@@ -180,7 +180,7 @@ Links úteis:
 | Pesquisador | Buscar informações, registrar fontes e apontar dúvidas | Criar uma lista curta de fontes confiáveis |
 | Produtor | Criar documentos, tabelas, apresentações e revisar o acabamento | Transformar a pesquisa em materiais de entrega |
 
-Não é necessário programar nada para criar cada Bot. <span style="color: orange"><strong>Basta instruir, falando ou escrevendo, explicando para o Agent o que você quer criar: o papel do Bot</strong></span>, como ele deve se comportar e qual é sua primeira tarefa.
+Não é necessário programar nada para criar cada Bot. 💡 **Basta instruir, falando ou escrevendo, explicando para o Agent o que você quer criar: o papel do Bot**, como ele deve se comportar e qual é sua primeira tarefa.
 
 ### Exercício em chat de grupo
 
@@ -244,7 +244,7 @@ Altere os valores, tente prever a saída e execute novamente.
 | `for` | Repete uma ação para cada item | Mostrar todos os nomes da equipe |
 | Funções | Reúnem passos que podem ser reutilizados | Criar `calcular_pontos()` |
 
-<span style="color: orange"><strong>Não é necessário dominar tudo antes de criar. Peça à IA para criar o código, explicar o código, faça uma alteração pequena, execute e confira.</strong></span>
+💡 **Não é necessário dominar tudo antes de criar. Peça à IA para criar o código, explicar o código, faça uma alteração pequena, execute e confira.**
 
 ### Exercícios clássicos com funções
 
@@ -439,7 +439,7 @@ O [Claude Code](https://code.claude.com/docs/en/overview) é um Agent que lê o 
 
 ### Tudo começa com arquivos Markdown
 
-<span style="color: orange"><strong>Boa parte da personalização pode ser criada pedindo ao próprio Claude Code para escrever os arquivos necessários da forma que você quer.</strong></span>
+💡 **Boa parte da personalização pode ser criada pedindo ao próprio Claude Code para escrever os arquivos necessários da forma que você quer.**
 
 | Local | Escopo | Exemplo de uso |
 |---|---|---|
@@ -486,7 +486,7 @@ Links oficiais:
 
 Essas instruções orientam o modelo, mas não são uma barreira de segurança garantida. Para bloquear ações, use permissões e hooks.
 
-<span style="color: orange"><strong>Use o próprio modelo para criar o CLAUDE.md (Claude Code) ou AGENTS.md (Cursor e outros).</strong></span>
+💡 **Use o próprio modelo para criar o CLAUDE.md (Claude Code) ou AGENTS.md (Cursor e outros).**
 
 ### Agents internos principais
 
@@ -518,7 +518,7 @@ O Claude pode delegar automaticamente para um subagent quando a descrição comb
 
 ### Rules, skills e Agents: qual usar?
 
-<span style="color: orange"><strong>Assim como o CLAUDE.md, os arquivos markdown (.md) de Rules, Skills e Subagents também podem ser escritos pelo próprio Agent: basta explicar o que você quer e pedir para ele criar o arquivo.</strong></span>
+💡 **Assim como o CLAUDE.md, os arquivos markdown (.md) de Rules, Skills e Subagents também podem ser escritos pelo próprio Agent: basta explicar o que você quer e pedir para ele criar o arquivo.**
 
 | Recurso | Use quando... | Exemplo |
 |---|---|---|
@@ -556,7 +556,7 @@ Links úteis:
 
 Selecione Plan Mode na janela do agente ou pressione `Shift + Tab` no campo de conversa até chegar ao Plan Mode. O Agent pesquisa o projeto, faz perguntas e cria um plano revisável antes de editar arquivos.
 
-<span style="color: orange"><strong>Planejar antes de implementar reduz erros: o Agent entende melhor o pedido, você consegue corrigir uma direção errada antes que ela vire código, e ambos ficam alinhados sobre o que vai ser feito antes do trabalho começar. É muito mais barato ajustar um plano do que desfazer uma implementação inteira.</strong></span>
+💡 **Planejar antes de implementar reduz erros: o Agent entende melhor o pedido, você consegue corrigir uma direção errada antes que ela vire código, e ambos ficam alinhados sobre o que vai ser feito antes do trabalho começar. É muito mais barato ajustar um plano do que desfazer uma implementação inteira.**
 
 Prompt inicial:
 
@@ -606,7 +606,7 @@ As regras de projeto ficam em `.cursor/rules/` como arquivos `.mdc`. Um `AGENTS.
 
 ## 11. Testes e qualidade para projetos de código
 
-<span style="color: orange"><strong>Dica que melhora muito a qualidade dos resultados dos agentes: peça ao Agent para executar testes, ler os erros, corrigir o código e executar tudo novamente.</strong></span>
+💡 **Dica que melhora muito a qualidade dos resultados dos agentes: peça ao Agent para executar testes, ler os erros, corrigir o código e executar tudo novamente.**
 
 | Ferramenta | O que verifica | Link |
 |---|---|---|
@@ -625,7 +625,7 @@ No final, explique em linguagem simples o que cada verificação confirmou.
 Não esconda testes que falharam.
 ```
 
-<span style="color: orange"><strong>Essas instruções também podem ficar salvas de forma permanente no `CLAUDE.md` ou `AGENTS.md` do projeto, para que o Agent execute testes automaticamente em todas as sessões, sem precisar repetir o prompt toda vez.</strong></span>
+💡 **Essas instruções também podem ficar salvas de forma permanente no `CLAUDE.md` ou `AGENTS.md` do projeto, para que o Agent execute testes automaticamente em todas as sessões, sem precisar repetir o prompt toda vez.**
 
 ## 12. Projeto final sugerido
 
@@ -667,7 +667,7 @@ Esse fluxo com coordinator e workers se aplica diretamente ao Grok Bot. No Claud
 
 O Git cria versões do projeto. O GitHub guarda repositórios online e facilita colaboração, revisão e compartilhamento.
 
-<span style="color: orange"><strong>Esta seção é voltada para quem quer aprender a programar de forma mais estruturada, duradoura e com boas práticas, e não apenas fazer projetos pessoais ou descartáveis.</strong></span> Se o objetivo é só testar ideias rapidamente, o [setup com `uv`](#setup-rápido-para-projetos-descartáveis) do item 7 é suficiente.
+💡 **Esta seção é voltada para quem quer aprender a programar de forma mais estruturada, duradoura e com boas práticas, e não apenas fazer projetos pessoais ou descartáveis.** Se o objetivo é só testar ideias rapidamente, o [setup com `uv`](#setup-rápido-para-projetos-descartáveis) do item 7 é suficiente.
 
 Links para começar:
 
