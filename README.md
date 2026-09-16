@@ -520,6 +520,29 @@ Essas instruções orientam o modelo, mas não são uma barreira de segurança g
 
 O Claude pode delegar automaticamente para um subagent quando a descrição combina com a tarefa. Para pedir um Agent específico, escreva claramente: `Use o subagent test-runner para executar e analisar os testes.`
 
+### Como criar um subagent personalizado
+
+Peça ao próprio Claude Code para criar o arquivo em `.claude/agents/<nome>.md`, descrevendo:
+
+| Campo | Para que serve | Exemplo |
+|---|---|---|
+| Nome | Identifica o subagent | `test-runner` |
+| Descrição/gatilho | Ajuda o Claude a saber quando chamar esse subagent automaticamente | "Use depois de qualquer alteração de código para executar e revisar os testes" |
+| Tools permitidas | Limita o que o subagent pode fazer | Só `Read`, `Bash` e `Edit` em `tests/` |
+| Instruções | Papel, passos esperados e formato da resposta | "Execute pytest, leia as falhas, corrija o código, execute novamente e resuma o resultado" |
+
+Prompt útil:
+
+```text
+Crie um subagent chamado test-runner em .claude/agents/test-runner.md.
+Ele deve ser chamado sempre que eu terminar de editar código.
+Papel: executar pytest, ler os erros, corrigir o problema e executar de novo.
+Tools permitidas: Read, Edit, Bash. Não permita Write fora da pasta tests/ e src/.
+No final, resuma em português o que foi testado e o que foi corrigido.
+```
+
+Comece com poucos subagents e só crie um novo quando notar uma tarefa repetida que merece um papel e um contexto próprios.
+
 **Sobre `@`:** use `@arquivo` ou `@pasta` para colocar arquivos e pastas no contexto. Não dependa de `@nome-do-agent` para invocar um subagent; essa não é a forma oficial e garantida. Peça pelo nome em linguagem natural.
 
 ### Tools principais
