@@ -19,8 +19,8 @@ Uma trilha prática para quem ficou de fora dos avanços recentes em Inteligênc
 - [4. Grok Bot: primeira experiência com vários Agents](#4-grok-bot-primeira-experiência-com-vários-agents)
 - [5. Google Colab e Python básico](#5-google-colab-e-python-básico)
 - [6. Vídeos e playlists em português brasileiro](#6-vídeos-e-playlists-em-português-brasileiro)
-- [7. Estrutura de projeto simples e agent-friendly](#7-estrutura-de-projeto-simples-e-agent-friendly)
-- [8. VS Code com Agents](#8-vs-code-com-agents)
+- [7. VS Code com Agents](#7-vs-code-com-agents)
+- [8. Estrutura de projeto simples e agent-friendly](#8-estrutura-de-projeto-simples-e-agent-friendly)
 - [9. Claude Code sem mistério](#9-claude-code-sem-mistério)
 - [10. Cursor para planejar e construir](#10-cursor-para-planejar-e-construir)
 - [11. Testes e qualidade para projetos de código](#11-testes-e-qualidade-para-projetos-de-código)
@@ -432,11 +432,37 @@ Use os vídeos sob demanda. Não é necessário terminar todas as playlists.
 | Python curto | [Curso Básico de Python — Hashtag](https://www.youtube.com/playlist?list=PLpdAy0tYrnKwgyv8Rc867jA_huQfcpF29) | Priorizar variáveis, strings, listas, `if` e `for` |
 | Python com mais exercícios | [Python 3 Mundo 1 — Curso em Vídeo](https://www.youtube.com/playlist?list=PLHz_AreHm4dlKP6QQCekuIPky1CiwmdI6) | Consultar somente quando precisar reforçar um fundamento |
 
-## 7. Estrutura de projeto simples e agent-friendly
+## 7. VS Code com Agents
+
+O [Visual Studio Code](https://code.visualstudio.com/download) é um editor gratuito. Dentro dele, é possível instalar extensões de Agents pela própria tela de extensões.
+
+| Extensão oficial | Instalação | Documentação |
+|---|---|---|
+| Claude Code | Buscar `Claude Code for VS Code` no painel de extensões | [Marketplace](https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code) |
+| Codex | Buscar `Codex – OpenAI's coding agent` | [Marketplace](https://marketplace.visualstudio.com/items?itemName=openai.chatgpt) e [guia oficial](https://developers.openai.com/codex/ide) |
+| Python | Buscar `Python`, publicada pela Microsoft | [Marketplace](https://marketplace.visualstudio.com/items?itemName=ms-python.python) |
+
+### É preciso instalar Python antes?
+
+| Situação | Resposta simples |
+|---|---|
+| Usar Colab | Não. O Python executa na nuvem. |
+| Criar e executar `.py` no computador | Sim. Instale pelo [site oficial do Python](https://www.python.org/downloads/) e marque a opção de adicionar Python ao `PATH` no Windows. |
+| Pedir ao Agent para instalar | Ele pode orientar e, com permissão, talvez executar parte da instalação. Para iniciantes, é melhor instalar pelo site oficial e pedir ao Agent para **verificar** a instalação. |
+
+Prompt de verificação:
+
+```text
+Verifique se Python e Git estão instalados neste computador.
+Não faça mudanças ainda. Mostre o que encontrou e explique em linguagem simples
+qual instalação ou configuração falta.
+```
+
+## 8. Estrutura de projeto simples e agent-friendly
 
 Um Agent trabalha melhor quando encontra nomes claros, documentação curta e arquivos no lugar esperado.
 
-💡 **Esta estrutura é para projetos locais**, criados diretamente no seu computador (ex.: `Desktop/projetos/meu-projeto`), e não dentro do Google Colab. Ela é pensada para ser usada com um editor com Agent, como VS Code ou Claude Code (seções 8 e 9 a seguir) ou Cursor (seção 10).
+💡 **Esta estrutura é para projetos locais**, criados diretamente no seu computador (ex.: `Desktop/projetos/meu-projeto`), e não dentro do Google Colab. Ela é pensada para ser usada com um editor com Agent, como o VS Code que você acabou de configurar (seção anterior), o Claude Code (seção 9 a seguir) ou o Cursor (seção 10).
 
 Estrutura recomendada:
 
@@ -551,7 +577,7 @@ Para instalar outras bibliotecas depois, use o mesmo comando:
 uv add numpy matplotlib scikit-learn
 ```
 
-Se o experimento crescer e passar a valer a pena organizar melhor, crie manualmente (ou peça ao Agent para criar) as pastas da [estrutura recomendada](#7-estrutura-de-projeto-simples-e-agent-friendly) conforme a necessidade — não é preciso criar tudo de uma vez.
+Se o experimento crescer e passar a valer a pena organizar melhor, crie manualmente (ou peça ao Agent para criar) as pastas da [estrutura recomendada](#8-estrutura-de-projeto-simples-e-agent-friendly) conforme a necessidade — não é preciso criar tudo de uma vez.
 
 Para executar um arquivo Python:
 
@@ -560,32 +586,6 @@ uv run python main.py
 ```
 
 Quando não precisar mais do experimento, basta apagar a pasta.
-
-## 8. VS Code com Agents
-
-O [Visual Studio Code](https://code.visualstudio.com/download) é um editor gratuito. Dentro dele, é possível instalar extensões de Agents pela própria tela de extensões.
-
-| Extensão oficial | Instalação | Documentação |
-|---|---|---|
-| Claude Code | Buscar `Claude Code for VS Code` no painel de extensões | [Marketplace](https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code) |
-| Codex | Buscar `Codex – OpenAI's coding agent` | [Marketplace](https://marketplace.visualstudio.com/items?itemName=openai.chatgpt) e [guia oficial](https://developers.openai.com/codex/ide) |
-| Python | Buscar `Python`, publicada pela Microsoft | [Marketplace](https://marketplace.visualstudio.com/items?itemName=ms-python.python) |
-
-### É preciso instalar Python antes?
-
-| Situação | Resposta simples |
-|---|---|
-| Usar Colab | Não. O Python executa na nuvem. |
-| Criar e executar `.py` no computador | Sim. Instale pelo [site oficial do Python](https://www.python.org/downloads/) e marque a opção de adicionar Python ao `PATH` no Windows. |
-| Pedir ao Agent para instalar | Ele pode orientar e, com permissão, talvez executar parte da instalação. Para iniciantes, é melhor instalar pelo site oficial e pedir ao Agent para **verificar** a instalação. |
-
-Prompt de verificação:
-
-```text
-Verifique se Python e Git estão instalados neste computador.
-Não faça mudanças ainda. Mostre o que encontrou e explique em linguagem simples
-qual instalação ou configuração falta.
-```
 
 ## 9. Claude Code sem mistério
 
@@ -844,7 +844,7 @@ Esse fluxo com coordinator e workers se aplica diretamente ao Grok Bot. No Claud
 
 O Git cria versões do projeto. O GitHub guarda repositórios online e facilita colaboração, revisão e compartilhamento.
 
-💡 **Esta seção é voltada para quem quer aprender a programar de forma mais estruturada, duradoura e com boas práticas, e não apenas fazer projetos pessoais ou descartáveis.** Se o objetivo é só testar ideias rapidamente, o [setup com `uv`](#setup-rápido-para-projetos-descartáveis) do item 7 é suficiente.
+💡 **Esta seção é voltada para quem quer aprender a programar de forma mais estruturada, duradoura e com boas práticas, e não apenas fazer projetos pessoais ou descartáveis.** Se o objetivo é só testar ideias rapidamente, o [setup com `uv`](#setup-rápido-para-projetos-descartáveis) do item 8 é suficiente.
 
 Links para começar:
 
