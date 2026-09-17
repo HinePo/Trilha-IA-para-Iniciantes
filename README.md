@@ -521,6 +521,14 @@ executar e testar. Não complique a arquitetura sem necessidade.
 
 Para testes, experimentos e projetos aleatórios que não precisam de Git, branches, CI ou estrutura formal, use o [`uv`](https://docs.astral.sh/uv/) — ele cuida sozinho do ambiente virtual, do Python e das dependências.
 
+**Instalar o `uv` (uma vez só, no computador):** abra um terminal PowerShell — clique no menu Iniciar, digite `PowerShell` e pressione Enter — e execute o comando da [página oficial de instalação](https://docs.astral.sh/uv/getting-started/installation/):
+
+```powershell
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
+Depois, feche e abra o terminal de novo para o comando `uv` ficar disponível.
+
 1. Crie uma pasta para o projeto (ex.: `Desktop/meus-projetos/meu-projeto`), pelo Explorador de Arquivos mesmo.
 2. Abra o VS Code ou o Cursor e use **File > Open Folder** (ou `Arquivo > Abrir Pasta`) para abrir essa pasta.
 3. Abra o terminal integrado com `Ctrl + '` (ou pelo menu **Terminal > New Terminal**).
