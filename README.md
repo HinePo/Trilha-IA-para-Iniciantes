@@ -178,7 +178,7 @@ No começo, use poucos Agents. Um coordinator e dois ou três workers já demons
 
 ## 4. Grok Bot: primeira experiência com vários Agents
 
-O [Grok Bot](https://x.ai/bot) permite criar Bots persistentes, dar um papel para cada um e colocá-los para colaborar. Os Bots compartilham um computador em nuvem, mas mantêm conversas e papéis próprios. O acesso depende de um plano compatível.
+O [Grok Bot](https://x.ai/bot) permite criar Bots persistentes, dar um papel para cada um e colocá-los para colaborar. Os Bots compartilham um computador em nuvem, mas mantêm conversas e papéis próprios.
 
 > Para quem nunca trabalhou com Agents, o Grok Bot pode ser o **melhor ponto de partida** da trilha. Ele é simples de configurar, roda no navegador sem instalar nada, e mostra de forma visual cada Bot, seu papel e a troca de mensagens entre eles. Isso ajuda a construir o modelo mental de coordinator e workers antes de lidar com Agents de código, que são mais poderosos, mas também mais abstratos.
 
@@ -193,19 +193,68 @@ Links úteis:
 - [Skills, rotinas e automações](https://docs.x.ai/grok-bot/skills-routines-and-automations)
 - [Download do Grok Bot](https://cursor.com/download/bot)
 
-### Três Bots para criar
+### Quatro Bots para criar
 
 | Bot | Papel sugerido | Primeira tarefa |
 |---|---|---|
-| Coordenador | Conversar com o usuário, dividir tarefas e chamar os outros Bots | Organizar um projeto sobre um tema escolhido |
-| Pesquisador | Buscar informações, registrar fontes e apontar dúvidas | Criar uma lista curta de fontes confiáveis |
-| Produtor | Criar documentos, tabelas, apresentações e revisar o acabamento | Transformar a pesquisa em materiais de entrega |
+| Coordenador | Planejar, quebrar o trabalho em tarefas, delegar aos outros Bots e sumarizar os resultados | Organizar um projeto sobre um tema escolhido |
+| Pesquisador | Fazer pesquisa profunda na internet, registrar fontes e apontar dúvidas | Criar uma lista curta de fontes confiáveis |
+| Apresentador (ou "PPT-zeiro") | Criar apresentações em PowerPoint, sempre seguindo o padrão visual da "empresa" | Transformar a pesquisa em uma apresentação de slides |
+| Analista de Dados | Criar planilhas, analisar dados e, quando fizer sentido, montar notebooks Python | Transformar a pesquisa em uma planilha com os principais números |
 
 Não é necessário programar nada para criar cada Bot. 💡 **Basta instruir, falando ou escrevendo, explicando para o Agent o que você quer criar: o papel do Bot**, como ele deve se comportar e qual é sua primeira tarefa.
 
+💡 **Convenção de pasta padrão:** como os Bots compartilham o mesmo computador em nuvem, é mais simples deixar essa regra só com o Coordenador: ele sempre salva (e instrui os outros Bots a salvar) dentro de uma pasta-base fixa (ex.: `Desktop/projetos-pessoais`), criando uma **subpasta nova para cada projeto**, a menos que você peça outro local. Se preferir mais segurança, repita a mesma instrução em cada um dos quatro Bots — assim nenhum deles depende de lembrar o caminho combinado com o Coordenador.
+
+Prompts de exemplo para criar cada Bot:
+
+**Coordenador**
+
+```text
+Você é o Coordenador do time. Seu papel é planejar, quebrar objetivos em tarefas menores,
+delegar cada tarefa ao Bot mais adequado 
+e sumarizar os resultados para mim no final.
+Pasta padrão para salvar arquivos: Desktop/projetos-pessoais. Para cada novo projeto, crie
+uma subpasta nova com um nome curto e descritivo dentro dessa pasta, a menos que eu peça
+outro local.
+Antes de começar, mostre o plano e a divisão de tarefas. No final, confira se os arquivos
+dos outros Bots estão na pasta correta e faça um resumo do que foi entregue.
+```
+
+**Pesquisador**
+
+```text
+Você é o Pesquisador do time. Seu papel é fazer pesquisa profunda na internet, registrar
+as fontes usadas e apontar dúvidas ou informações conflitantes.
+Quando o Coordenador te passar uma tarefa, entregue um resumo claro com uma lista de
+fontes confiáveis (link e data de acesso). Avise sempre que não tiver certeza de uma
+informação em vez de inventar.
+```
+
+**Apresentador (PPT-zeiro)**
+
+```text
+Você é o Apresentador do time. Seu papel é criar apresentações em PowerPoint a partir do
+conteúdo que os outros Bots produzirem.
+Sempre use o tema azul-marinho, que é a cor da empresa. [ou: sempre siga o modelo de
+slides salvo em <caminho ou link do template>.]
+Salve o arquivo final na pasta do projeto indicada pelo Coordenador. Antes de finalizar,
+revise o texto, a ortografia e se os slides estão visualmente consistentes.
+```
+
+**Analista de Dados**
+
+```text
+Você é o Analista de Dados do time. Seu papel é organizar dados em planilhas, fazer
+análises simples e, quando fizer sentido, criar um notebook Python (Jupyter) explicando
+cada etapa.
+Salve a planilha e o notebook na pasta do projeto indicada pelo Coordenador. Explique os
+resultados em linguagem simples, destacando os números mais importantes.
+```
+
 ### Exercício em chat de grupo
 
-1. Crie os três Bots.
+1. Crie os quatro Bots.
 2. Abra uma conversa com o Coordenador.
 3. Adicione os outros Bots ao mesmo grupo.
 4. Envie somente ao Coordenador:
@@ -213,13 +262,34 @@ Não é necessário programar nada para criar cada Bot. 💡 **Basta instruir, f
 ```text
 Coordene os outros Bots para criar um pequeno kit sobre energia solar.
 Quero:
-1. um documento Word de duas páginas;
-2. uma planilha Excel com dez exemplos e três colunas;
-3. uma apresentação de cinco slides.
-Antes de começar, mostre a divisão de tarefas. No final, revise se todos os arquivos estão claros e consistentes.
+1. uma pesquisa curta com fontes confiáveis;
+2. uma planilha Excel com dez exemplos e três colunas, feita pelo Analista de Dados;
+3. uma apresentação de cinco slides no padrão azul-marinho, feita pelo Apresentador.
 ```
 
 Depois, repita com um tema de interesse pessoal. As ações disponíveis dependem dos aplicativos conectados, dos logins e das permissões concedidas. Revise qualquer ação externa antes de aprovar.
+
+Alguns exemplos de aplicativos comuns que podem ser conectados aos Bots: Gmail, Google Drive, Google Calendar, Notion, Slack e GitHub. Para conectar, procure por **Marketplace** na interface do Grok Bot: lá é possível instalar plugins e Bots públicos, geralmente de graça, sem precisar programar nada.
+
+### Acompanhar e ensinar o Bot: assumir o controle e demonstrar tarefas
+
+Os Bots trabalham no mesmo computador virtual compartilhado, na nuvem. Você pode acompanhar o que um Bot está fazendo em tempo real abrindo a visualização da tela na conversa daquele Bot (o botão que mostra a tela do computador virtual, algo como "Ver tela").
+
+**Assumir o controle**
+
+Se o Bot travar, clicar no lugar errado ou você quiser terminar uma etapa manualmente, clique em **Assumir o controle**. Isso transfere o mouse e o teclado daquele computador virtual para você. Faça o que for necessário e devolva o controle ao Bot para que ele continue de onde você parou.
+
+**Ensinar uma tarefa**
+
+Para tarefas repetitivas ou específicas de um site/sistema que o Bot ainda não sabe fazer, use **Ensinar uma tarefa**:
+
+1. Clique em "Ensinar uma tarefa" no Bot desejado.
+2. A tela do computador virtual do Bot passa a ser gravada.
+3. Realize a tarefa manualmente, passo a passo (ex.: preencher um formulário, navegar até uma página específica, exportar um relatório).
+4. Finalize a gravação.
+5. O Bot aprende a sequência de passos e passa a conseguir repeti-la sozinho da próxima vez, adaptando-se a pequenas variações na tela.
+
+💡 **Ensinar uma tarefa é útil quando um passo depende de um login específico, de um site sem documentação ou de um fluxo mais fácil de mostrar do que explicar em texto.**
 
 ## 5. Google Colab e Python básico
 
@@ -300,6 +370,41 @@ Peça à IA para explicar cada linha, depois peça para adicionar outras faixas 
 - **Verificador de palíndromo:** uma função `eh_palindromo(palavra)` testada com uma lista de palavras (ex.: `"arara"`, `"colab"`, `"ovo"`), ignorando maiúsculas e espaços.
 
 O padrão se repete: escrever a função, montar uma lista de casos de teste e usar `for` para aplicar a função a todos eles de uma vez.
+
+### Subindo e lendo seus próprios dados (Excel, CSV)
+
+Além de usar datasets prontos, você pode subir seus próprios arquivos para o Colab.
+
+1. Abra o painel de arquivos na barra lateral esquerda (ícone de pasta).
+2. Clique no ícone de upload e selecione um arquivo do seu computador (ex.: `dados.csv` ou `dados.xlsx`).
+3. Espere o upload terminar. O arquivo fica disponível só durante a sessão atual; se o notebook for fechado ou reiniciado, é preciso subir de novo (ou salvar o arquivo no Google Drive para reaproveitar entre sessões).
+
+Depois de subir, leia o arquivo com pandas:
+
+```python
+import pandas as pd
+
+# Arquivo CSV
+df = pd.read_csv("dados.csv")
+
+# Arquivo Excel
+df = pd.read_excel("dados.xlsx")
+
+df.head()
+```
+
+💡 **Alternativa mais simples: use o Gemini integrado ao Colab.** Todo notebook do Colab tem um assistente Gemini (ícone de estrela, geralmente no canto superior direito ou ao lado de cada célula). Depois de subir o arquivo, você pode pedir diretamente a ele, sem escrever nenhuma linha de código:
+
+```text
+Leia o arquivo dados.csv que subi, mostre as primeiras linhas e me diga quais colunas existem.
+```
+
+```text
+Analise o arquivo dados.xlsx: calcule a média de cada coluna numérica e crie um gráfico
+comparando as duas colunas mais relevantes.
+```
+
+O Gemini do Colab escreve e executa o código de pandas por você, direto nas células do notebook. Mesmo assim, sempre confira o código gerado e o resultado antes de confiar nele.
 
 ### Projeto rápido com dados de Pokémon
 
