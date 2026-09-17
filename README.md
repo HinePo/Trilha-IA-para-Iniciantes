@@ -436,12 +436,19 @@ Use os vídeos sob demanda. Não é necessário terminar todas as playlists.
 
 Um Agent trabalha melhor quando encontra nomes claros, documentação curta e arquivos no lugar esperado.
 
+💡 **Esta estrutura é para projetos locais**, criados diretamente no seu computador (ex.: `Desktop/projetos/meu-projeto`), e não dentro do Google Colab. Ela é pensada para ser usada com um editor com Agent, como VS Code ou Claude Code (seções 8 e 9 a seguir) ou Cursor (seção 10).
+
 Estrutura recomendada:
 
 ```text
 meu-projeto/
 ├── README.md
 ├── AGENTS.md ou CLAUDE.md
+├── .claude/
+│   ├── agents/
+│   ├── skills/
+│   ├── rules/
+│   └── settings.json
 ├── docs/
 │   ├── fontes/
 │   ├── imagens/
@@ -457,10 +464,17 @@ meu-projeto/
 └── .gitignore
 ```
 
+**Arquivos e pastas do projeto** (ficam dentro de `meu-projeto/`, geralmente compartilhados pelo Git):
+
 | Pasta ou arquivo | Para que serve |
 |---|---|
 | `README.md` | Explica o objetivo, como começar, estrutura e comandos principais |
 | `AGENTS.md` ou `CLAUDE.md` | Dá instruções aos Agents que trabalham no projeto |
+| `.claude/` | Configuração específica do Claude Code para este projeto (detalhado na seção 9) |
+| `.claude/agents/` | Subagents personalizados do projeto |
+| `.claude/skills/` | Skills reutilizáveis do projeto |
+| `.claude/rules/` | Regras gerais ou aplicadas a certos caminhos |
+| `.claude/settings.json` | Permissões, hooks e configurações compartilhadas |
 | `docs/` | Guarda PDFs, planilhas, requisitos, links e demais referências |
 | `docs/fontes/` | Guarda os materiais originais usados no projeto |
 | `data/raw/` | Dados originais, que não devem ser alterados |
@@ -471,6 +485,16 @@ meu-projeto/
 | `outputs/` | Relatórios, gráficos e arquivos gerados |
 | `pyproject.toml` | Dependências e configurações do projeto Python |
 | `.gitignore` | Lista arquivos que não devem ir para o Git |
+
+**Arquivos e pastas do usuário** (pessoais, ficam fora do projeto ou fora do Git, e não são compartilhados com o time):
+
+| Pasta ou arquivo | Para que serve |
+|---|---|
+| `~/.claude/CLAUDE.md` | Preferências pessoais aplicadas a todos os projetos no seu computador |
+| `~/.claude/agents/*.md` | Subagents pessoais, disponíveis em qualquer projeto |
+| `.claude/settings.local.json` | Configuração local do projeto, específica da sua máquina (não vai para o Git) |
+
+💡 **A pasta `.claude/` é específica de quem usa o Claude Code.** Se você usar Cursor ou outro Agent, essa pasta pode não existir ou ter outro nome (ex.: `.cursor/rules/` no Cursor, visto na seção 10) — o resto da estrutura continua valendo.
 
 ### O que escrever no README
 
@@ -876,3 +900,12 @@ Depois desta trilha, escolha apenas uma direção:
 | Agents | Criar subagents com tools e permissões específicas |
 
 O objetivo não é dominar todas as plataformas, mas conseguir começar um projeto, orientar um Agent, entender o que ele fez, testar o resultado e continuar aprendendo sozinho. Com isso, você facilita tarefas do dia a dia e amplia o campo em que consegue atuar.
+
+💡 **No fundo, boa parte desta trilha se resume a uma coisa: montar uma organização "agent-friendly", que ajuda qualquer Agent (Grok Bot, Claude Code, Cursor ou outro) a trabalhar melhor com você.** Isso inclui, por exemplo:
+
+- instruções globais, válidas em qualquer projeto (ex.: `~/.claude/CLAUDE.md`);
+- instruções e procedimentos específicos de um projeto ou tarefa (ex.: `CLAUDE.md`, rules, skills, subagents);
+- um lugar combinado para salvar os arquivos que o Agent produz (ex.: uma pasta padrão para cada projeto);
+- um lugar claro para o Agent encontrar documentação, dados e referências (ex.: `README.md`, `docs/`, fontes registradas).
+
+Quanto mais organizado e explícito isso estiver, menos você precisa reexplicar o mesmo contexto toda vez, e mais consistente fica o trabalho do Agent.
