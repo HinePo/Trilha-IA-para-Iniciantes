@@ -512,6 +512,8 @@ meu-projeto/
 | `pyproject.toml` | Dependências e configurações do projeto Python |
 | `.gitignore` | Lista arquivos que não devem ir para o Git |
 
+💡 **Não precisa criar `pyproject.toml` e `.gitignore` na mão**: eles (junto com outros arquivos, como `main.py`) são gerados automaticamente pelo comando `uv init`, explicado logo abaixo em "Setup rápido para projetos descartáveis".
+
 **Arquivos e pastas do usuário** (pessoais, ficam fora do projeto ou fora do Git, e não são compartilhados com o time):
 
 | Pasta ou arquivo | Para que serve |
@@ -592,6 +594,8 @@ Quando não precisar mais do experimento, basta apagar a pasta.
 O [Claude Code](https://code.claude.com/docs/en/overview) é um Agent que lê o projeto, edita vários arquivos e executa comandos com permissão. A extensão do VS Code (instalada acima) oferece uma interface visual para o mesmo mecanismo.
 
 ### Tudo começa com arquivos Markdown
+
+Ao abrir um projeto pela primeira vez no Claude Code, rode o comando `/init`: ele analisa os arquivos do projeto e gera automaticamente um `CLAUDE.md` inicial com um resumo da estrutura, comandos e convenções detectados. Depois é só editar esse arquivo à mão (ou pedir ao próprio Claude Code para ajustá-lo) conforme o projeto evolui.
 
 💡 **Boa parte da personalização pode ser criada pedindo ao próprio Claude Code para escrever os arquivos necessários da forma que você quer.**
 
@@ -705,10 +709,11 @@ Comece com poucos subagents e só crie um novo quando notar uma tarefa repetida 
 | Subagent | Um worker precisa de contexto próprio, papel e tools específicas | Revisor de segurança |
 | Hook | Uma ação precisa acontecer de forma automática e determinística | Rodar o formatador após uma edição |
 
-### Cinco comandos úteis
+### Seis comandos úteis
 
 | Comando | Para que serve |
 |---|---|
+| `/init` | Analisa o projeto e gera um `CLAUDE.md` inicial |
 | `/help` | Mostra ajuda e comandos disponíveis |
 | `/status` | Mostra modelo, conta e estado da sessão |
 | `/memory` | Abre e gerencia instruções e memória |
