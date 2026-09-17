@@ -436,6 +436,8 @@ Use os vídeos sob demanda. Não é necessário terminar todas as playlists.
 
 O [Visual Studio Code](https://code.visualstudio.com/download) é um editor gratuito. Dentro dele, é possível instalar extensões de Agents pela própria tela de extensões.
 
+💡 **VS Code e Claude Code não são "só para código".** Na prática, são uma interface agent-friendly para organizar pastas, arquivos e documentação de qualquer projeto — pesquisa, apresentação, planilha, texto. O Agent lê e edita `.md`, `.docx`, `.xlsx`, `.pptx` e outros formatos do dia a dia normalmente. O Python só entra quando (e se) a tarefa pedir automação de verdade.
+
 | Extensão oficial | Instalação | Documentação |
 |---|---|---|
 | Claude Code | Buscar `Claude Code for VS Code` no painel de extensões | [Marketplace](https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code) |
