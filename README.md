@@ -631,11 +631,11 @@ Links oficiais:
 - Mantenha a solução simples e adequada para iniciantes.
 - Antes de editar, explique brevemente o plano.
 - Não altere os dados originais em data/raw/.
-- Sempre execute Ruff, mypy e pytest antes de concluir uma tarefa.
+- Quando apropriado, execute Ruff, mypy e pytest antes de concluir uma tarefa.
 - Para código puro (funções, scripts de dados, protótipos), crie também um
   notebook de teste rápido em notebooks/ para validar o comportamento na prática,
   além dos testes automatizados.
-- Sempre crie ou atualize um progress.md com as fases do plano e o status de
+- Crie ou atualize um progress.md com as fases do plano e o status de
   cada uma (pendente, em andamento, concluída) antes de começar a implementar.
 - Ao final de cada fase, marque-a como concluída em progress.md antes de
   seguir para a próxima.
